@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Anual Interactivo - Matemática 5to Primaria | Colegio Montano</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-btn.active {
+            background-color: #F2C94C !important;
+            color: #1F3C88 !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- BARRA SUPERIOR INSTITUCIONAL -->
+    <header class="bg-[#1F3C88] text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <!-- Logo y Datos Institucionales -->
+            <div class="flex items-center gap-4">
+                <img src="https://admisiones.colegiomontano.edu.gt/assets/img/logo-cm-blanco.webp" alt="Logo Colegio Montano" style="max-height: 50px;" class="object-contain">
+                <div>
+                    <h1 class="text-lg font-bold">Colegio Montano Cortijo</h1>
+                    <p class="text-sm text-[#F2C94C]<i>Asistente Pedagógico Institucional</i></p>
+                </div>
+            </div>
+
+            <!-- Datos del Docente y Curso -->
+            <div class="text-center md:text-right text-sm">
+                <p><i>Curso:</i> Matemática | <i>Grado:</i> 5to Primaria</p>
+                <p><i>Docente:</i> Karla Alejandra Monroy Rosales | <i>Ciclo Escolar:</i> 2027</p>
+            </div>
+
+            <!-- Botón Pantalla Completa -->
+            <button onclick="toggleFullScreen()" class="bg-[#F2C94C] text-[#1F3C88] px-4 py-2 rounded-lg font-bold text-sm shadow hover:bg-yellow-400 transition cursor-pointer flex items-center gap-2">
+                🖥️ <i>Pantalla Completa</i>
+            </button>
+        </div>
+
+        <!-- NAVEGACIÓN HORIZONTAL POR PESTAÑAS -->
+        <nav class="bg-[#3F72AF] px-4 overflow-x-auto">
+            <div class="max-w-7xl mx-auto flex gap-1 py-2">
+                <button onclick="switchTab(event, 'tab-descriptor')" class="tab-btn active px-4 py-2 rounded text-white hover:bg-[#1F3C88] transition text-sm whitespace-nowrap">I) <i>Descriptor</i></button>
+                <button onclick="switchTab(event, 'tab-objetivos')" class="tab-btn px-4 py-2 rounded text-white hover:bg-[#1F3C88] transition text-sm whitespace-nowrap">II) <i>Objetivos</i></button>
+                <button onclick="switchTab(event, 'tab-competencias')" class="tab-btn px-4 py-2 rounded text-white hover:bg-[#1F3C88] transition text-sm whitespace-nowrap">III) <i>Competencias</i></button>
+                <button onclick="switchTab(event, 'tab-indicadores')" class="tab-btn px-4 py-2 rounded text-white hover:bg-[#1F3C88] transition text-sm whitespace-nowrap">IV) <i>Indicadores</i></button>
+                <button onclick="switchTab(event, 'tab-metodos')" class="tab-btn px-4 py-2 rounded text-white hover:bg-[#1F3C88] transition text-sm whitespace-nowrap">V) <i>Métodos</i></button>
+                <button onclick="switchTab(event, 'tab-bibliografia')" class="tab-btn px-4 py-2 rounded text-white hover:bg-[#1F3C88] transition text-sm whitespace-nowrap">VI) <i>Bibliografía</i></button>
+                <button onclick="switchTab(event, 'tab-contenidos')" class="tab-btn px-4 py-2 rounded text-white hover:bg-[#1F3C88] transition text-sm whitespace-nowrap">VII) <i>Contenidos</i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO DE LAS PESTAÑAS -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full">
+
+        <!-- I) DESCRIPTOR DEL CURSO -->
+        <section id="tab-descriptor" class="tab-content active bg-white p-6 rounded-xl shadow-md border-t-4 border-[#1F3C88]">
+            <h2 class="text-xl font-bold text-[#1F3C88] mb-4"><i>I) Descriptor del Curso</i></h2>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+                El curso de Matemáticas de quinto primaria busca fortalecer las habilidades de razonamiento lógico, cálculo y resolución de problemas en los estudiantes. A lo largo del año se desarrollan competencias relacionadas con el uso de números naturales, fracciones, decimales, medidas y figuras geométricas. Asimismo, se promueve la aplicación de la matemática en situaciones cotidianas, fomentando el pensamiento crítico, la precisión y la confianza al comunicar ideas y resultados.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+                La metodología del colegio favorece el aprendizaje activo y significativo, por medio de la exploración, el trabajo colaborativo y la reflexión constante, impulsando valores como la responsabilidad, la perseverancia y el respeto en cada proceso de aprendizaje.
+            </p>
+        </section>
+
+        <!-- II) OBJETIVOS GENERALES -->
+        <section id="tab-objetivos" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-[#1F3C88]">
+            <h2 class="text-xl font-bold text-[#1F3C88] mb-4"><i>II) Objetivos Generales</i></h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-[#3F72AF] mb-2"><i>Objetivos Declarativos</i></h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li>Comprende y aplica los conceptos fundamentales de números naturales, fracciones, decimales, medidas y geometría.</li>
+                        <li>Construye y analiza patrones, relaciones y proposiciones geométricas, espaciales y estadísticas.</li>
+                        <li>Identifica y describe las diferentes formas geométricas presentes en su entorno.</li>
+                        <li>Aplica el pensamiento lógico, reflexivo, crítico y creativo en la resolución de situaciones problemáticas de su contexto.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-[#3F72AF] mb-2"><i>Objetivos Procedimentales</i></h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li>Resuelve problemas de la vida cotidiana aplicando estrategias y métodos matemáticos adecuados.</li>
+                        <li>Emplea distintos procedimientos para desarrollar correctamente ejercicios y problemas matemáticos.</li>
+                        <li>Utiliza estrategias propias de la aritmética básica para resolver con precisión situaciones numéricas cotidianas.</li>
+                        <li>Integra los conocimientos matemáticos en acciones que favorecen el cuidado del medio ambiente y la valoración de la diversidad cultural.</li>
+                        <li>Emplea herramientas tecnológicas y saberes de su cultura y de otras culturas para resolver problemas de su entorno.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-[#3F72AF] mb-2"><i>Objetivos Actitudinales</i></h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li>Participa activamente en clase, demostrando interés, respeto y disposición para aprender de manera colaborativa.</li>
+                        <li>Practica los contenidos aprendidos dentro y fuera del aula, fortaleciendo la responsabilidad y la autonomía.</li>
+                        <li>Aplica el vocabulario y los hábitos del programa Líder en Mí para alcanzar los logros propuestos en el curso.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- III) COMPETENCIAS -->
+        <section id="tab-competencias" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-[#1F3C88]">
+            <h2 class="text-xl font-bold text-[#1F3C88] mb-4"><i>III) Competencias Académicas y CM</i></h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-bold text-[#3F72AF] mb-3"><i>Competencias Académicas del Área</i></h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li>Utiliza formas geométricas, símbolos, signos y señales para el desarrollo de sus actividades cotidianas.</li>
+                        <li>Aplica el pensamiento lógico, reflexivo, crítico y creativo en la solución de diferentes situaciones problemáticas de su contexto inmediato.</li>
+                        <li>Organiza los signos, símbolos gráficos, algoritmos y términos matemáticos que le permiten ofrecer diferentes soluciones a situaciones y problemas del medio en que se desenvuelve.</li>
+                        <li>Utiliza los conocimientos y experiencias matemáticas para el cuidado preventivo del medio natural, así como su enriquecimiento cultural.</li>
+                        <li>Utiliza estrategias propias de aritmética básica que le orientan a la solución de problemas de la vida cotidiana.</li>
+                        <li>Expresa, en forma gráfica y descriptiva, la diferencia que hace a partir de la información que obtiene en relación con diversos elementos y acontecimientos que observa en su contexto social, cultural y natural.</li>
+                        <li>Utiliza los conocimientos y las tecnologías propias de su cultura y las de otras culturas para resolver problemas de su entorno inmediato.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-[#3F72AF] mb-3"><i>Competencias CM (Colegio Montano)</i></h3>
+                    <ul class="grid grid-cols-1 gap-2 text-sm text-gray-700">
+                        <li class="bg-blue-50 p-2 rounded border border-blue-100"><i>Pensamiento crítico y resolución de problemas</i></li>
+                        <li class="bg-blue-50 p-2 rounded border border-blue-100"><i>Colaboración y trabajo en equipo</i></li>
+                        <li class="bg-blue-50 p-2 rounded border border-blue-100"><i>Competencias digitales</i></li>
+                        <li class="bg-blue-50 p-2 rounded border border-blue-100"><i>Comunicación efectiva</i></li>
+                        <li class="bg-blue-50 p-2 rounded border border-blue-100"><i>Creatividad e innovación</i></li>
+                        <li class="bg-blue-50 p-2 rounded border border-blue-100"><i>Aprendizaje autónomo y adaptabilidad</i></li>
+                        <li class="bg-blue-50 p-2 rounded border border-blue-100"><i>Conciencia global y cultural</i></li>
+                        <li class="bg-blue-50 p-2 rounded border border-blue-100"><i>Ética y ciudadanía digital</i></li>
+                        <li class="bg-blue-50 p-2 rounded border border-blue-100"><i>Gestión emocional y resiliencia</i></li>
+                        <li class="bg-blue-50 p-2 rounded border border-blue-100"><i>Conciencia ecológica y sostenibilidad</i></li>
+                        <li class="bg-blue-50 p-2 rounded border border-blue-100"><i>Desempeño de roles de liderazgo</i></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- IV) INDICADORES DE LOGRO -->
+        <section id="tab-indicadores" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-[#1F3C88]">
+            <h2 class="text-xl font-bold text-[#1F3C88] mb-4"><i>IV) Indicadores de Logro</i></h2>
+            <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Establece relación entre lados y ángulos de triángulos y cuadriláteros.</li>
+                    <li>Explica la relación que existe entre las figuras planas y sólidos geométricos: prismas (incluye cubo), pirámides, cilindro y cono.</li>
+                    <li>Identifica el círculo y sus partes.</li>
+                    <li>Calcula el perímetro de diferentes figuras planas y el área de un cuadrado, rectángulo y triángulo.</li>
+                    <li>Construye figuras con simetría.</li>
+                    <li>Utiliza el primer cuadrante del plano cartesiano para ubicar puntos y realizar dibujos.</li>
+                    <li>Construye mosaicos o diseños siguiendo patrones determinados.</li>
+                    <li>Representa subconjuntos del conjunto de los números naturales.</li>
+                    <li>Realiza operaciones de unión, intersección y diferencia entre conjuntos.</li>
+                    <li>Utiliza los números naturales en sistema decimal hasta 999,999, en el sistema Vigesimal Maya hasta la quinta posición y los números romanos hasta 500.</li>
+                    <li>Efectúa cálculos de suma, resta, multiplicación y división en el conjunto de los números naturales y racionales.</li>
+                    <li>Efectúa cálculos de suma, resta, y multiplicación con numeración Maya.</li>
+                    <li>Determina múltiplos y factores o divisores de un número.</li>
+                    <li>Realiza suma y resta con potenciación y radicación en el conjunto de los números naturales.</li>
+                </ul>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Utiliza los decimales para representar cantidades y calcular suma, resta, multiplicación y división.</li>
+                    <li>Utiliza las fracciones y mixtos para representar cantidades y calcular sumas, restas, multiplicaciones y divisiones.</li>
+                    <li>Utiliza proporciones para resolver problemas.</li>
+                    <li>Aplica suma, resta, multiplicación y división en la solución de problemas.</li>
+                    <li>Utiliza las proporciones y la regla de tres simple para la solución de problemas.</li>
+                    <li>Predice de eventos y sucesos.</li>
+                    <li>Utiliza gráficas de barra y gráfica circular para representar información recopilada.</li>
+                    <li>Calcula e interpreta el promedio aritmético.</li>
+                    <li>Utiliza diferentes unidades de medida para establecer longitud (del sistema métrico e inglés).</li>
+                    <li>Utiliza diferentes unidades de medida para establecer volumen, capacidad y temperatura.</li>
+                    <li>Utiliza diferentes unidades de tiempo para referirse a eventos o sucesos.</li>
+                    <li>Describe las características del calendario Maya agrícola o Ab y religioso.</li>
+                    <li>Lleva la cuenta larga para diferentes fechas.</li>
+                    <li>Resuelve problemas que involucren el uso de la moneda nacional y extranjeras.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- V) MÉTODOS DIDÁCTICOS -->
+        <section id="tab-metodos" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-[#1F3C88]">
+            <h2 class="text-xl font-bold text-[#1F3C88] mb-4"><i>V) Métodos Didácticos Institucionales</i></h2>
+            <p class="text-gray-700 mb-6">Modelo activo-colaborativo aplicado bajo el <i>Método del Período Doble (70 minutos)</i> y metodologías institucionales:</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <h3 class="font-bold text-[#1F3C88] mb-2"><i>1. Introducción Motivante</i></h3>
+                    <p class="text-sm text-gray-700">Activación de presaberes mediante juegos, dinamización y lluvia de ideas.</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <h3 class="font-bold text-[#1F3C88] mb-2"><i>2. Trabajo Individual</i></h3>
+                    <p class="text-sm text-gray-700">Desarrollo de potencialidades, habilidades y destrezas individuales.</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <h3 class="font-bold text-[#1F3C88] mb-2"><i>3. Trabajo en Equipo</i></h3>
+                    <p class="text-sm text-gray-700">Interacción con roles definidos bajo la consigna <i>"todos para uno y uno para todos"</i>.</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <h3 class="font-bold text-[#1F3C88] mb-2"><i>4. Plenaria</i></h3>
+                    <p class="text-sm text-gray-700">Exposición pública, diálogo socrático y lectura previa en casa.</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <h3 class="font-bold text-[#3F72AF] mb-2"><i>Metodologías Clave y Técnicas</i></h3>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <span class="bg-white px-3 py-1 rounded shadow-sm border border-gray-200">Aprendizaje Basado en Proyectos (ABP)</span>
+                    <span class="bg-white px-3 py-1 rounded shadow-sm border border-gray-200">Constructivismo</span>
+                    <span class="bg-white px-3 py-1 rounded shadow-sm border border-gray-200">Método de los cuatro momentos</span>
+                    <span class="bg-white px-3 py-1 rounded shadow-sm border border-gray-200">Conferencias</span>
+                    <span class="bg-white px-3 py-1 rounded shadow-sm border border-gray-200">Videos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- VI) BIBLIOGRAFÍA -->
+        <section id="tab-bibliografia" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-[#1F3C88]">
+            <h2 class="text-xl font-bold text-[#1F3C88] mb-4"><i>VI) Bibliografía</i></h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Currículo Nacional Base. Mineduc. Guatemala.</li>
+                <li>Universo Santillana 5.</li>
+                <li>Matemáticas 5. Susaeta.</li>
+                <li>Programa El Líder en mí.</li>
+            </ul>
+        </section>
+
+        <!-- VII) CONTENIDOS -->
+        <section id="tab-contenidos" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-[#1F3C88]">
+            <h2 class="text-xl font-bold text-[#1F3C88] mb-4"><i>VII) Contenidos Programáticos por Unidades</i></h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Unidad I -->
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-[#3F72AF] mb-3 border-b pb-2"><i>Unidad I</i></h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                        <li>Conjunto y su representación</li>
+                        <li>Clasificación de conjuntos</li>
+                        <li>Comparación de conjuntos</li>
+                        <li>Subconjunto</li>
+                        <li>Operación unión e intersección de conjuntos</li>
+                        <li>Operación de diferencia y diferencia simétrica</li>
+                        <li>Conjunto Universo y Complemento</li>
+                        <li>Producto cartesiano y plano coordenado</li>
+                        <li>Sistema de numeración decimal</li>
+                        <li>Lectura y escritura de cantidades</li>
+                        <li>Valor absoluto y relativo</li>
+                        <li>Orden y comparación de números</li>
+                        <li>Aproximación de cantidades enteras</li>
+                        <li>Razonamiento matemático</li>
+                        <li>Numeración Romana</li>
+                        <li>El sistema binario</li>
+                        <li>Conversión del sistema maya al decimal</li>
+                        <li>Conversión del sistema decimal al sistema vigesimal</li>
+                    </ul>
+                </div>
+
+                <!-- Unidad II -->
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-[#3F72AF] mb-3 border-b pb-2"><i>Unidad II</i></h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                        <li>Adición y sustracción de números naturales</li>
+                        <li>Estimación de la adición y sustracción</li>
+                        <li>Multiplicación por varios dígitos</li>
+                        <li>Propiedades de la multiplicación y división</li>
+                        <li>División entre cantidades con varios dígitos</li>
+                        <li>Múltiplos y divisores</li>
+                        <li>Números primos y compuestos</li>
+                        <li>Criterios de divisibilidad</li>
+                        <li>La potenciación y sus propiedades</li>
+                        <li>La raíz cuadrada</li>
+                        <li>Jerarquía de operaciones</li>
+                        <li>Problemas de multiplicación y división</li>
+                        <li>Números enteros</li>
+                        <li>Adición de números enteros</li>
+                        <li>Sustracción de números enteros</li>
+                        <li>Álgebra</li>
+                        <li>Términos semejantes</li>
+                        <li>Factorización prima</li>
+                        <li>Máximo común divisor</li>
+                        <li>Mínimo común múltiplo</li>
+                    </ul>
+                </div>
+
+                <!-- Unidad III -->
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-[#3F72AF] mb-3 border-b pb-2"><i>Unidad III</i></h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                        <li>Números racionales</li>
+                        <li>Fracción propia e impropia</li>
+                        <li>Fracciones equivalentes</li>
+                        <li>Fracciones homogéneas y heterogéneas</li>
+                        <li>Adición de fracciones</li>
+                        <li>Sustracción de fracciones</li>
+                        <li>Multiplicación de fracciones</li>
+                        <li>División de fracciones</li>
+                        <li>Operaciones combinadas con fracciones</li>
+                        <li>Problemas con fracciones</li>
+                        <li>Fracciones decimales y números decimales</li>
+                        <li>Valor relativo hasta diezmilésimas</li>
+                        <li>Orden y comparación de números decimales</li>
+                        <li>Aproximación de números decimales</li>
+                        <li>Adición y sustracción de números con decimales</li>
+                        <li>Multiplicación de números decimales</li>
+                        <li>Multiplicación por potencia de 10</li>
+                        <li>División de números decimales</li>
+                        <li>División entre números decimales</li>
+                        <li>División entre potencia de 10</li>
+                        <li>Problemas con números decimales</li>
+                        <li>Razones y proporciones</li>
+                        <li>Ley fundamental de las proporciones</li>
+                        <li>Magnitudes directa e inversamente proporcionales</li>
+                        <li>Porcentaje y tanto por ciento</li>
+                        <li>Interés simple</li>
+                    </ul>
+                </div>
+
+                <!-- Unidad IV -->
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-[#3F72AF] mb-3 border-b pb-2"><i>Unidad IV</i></h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                        <li>Mediciones</li>
+                        <li>Medición de longitud, área y volumen</li>
+                        <li>Medición de masa y capacidad</li>
+                        <li>Medición de tiempo</li>
+                        <li>Medición de temperatura</li>
+                        <li>Elementos básicos de geometría</li>
+                        <li>Polígonos</li>
+                        <li>Triángulos y cuadriláteros</li>
+                        <li>Perímetro y área de polígonos</li>
+                        <li>Circunferencia y círculo</li>
+                        <li>Sólidos geométricos y su volumen</li>
+                        <li>Datos y tablas estadísticas</li>
+                        <li>Gráfica de barras y lineal</li>
+                        <li>Diagrama de sector</li>
+                        <li>Medidas de tendencia central</li>
+                        <li>Probabilidad y eventos simple y compuestos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-[#1F3C88] text-white py-4 text-center text-sm mt-auto">
+        <p>Colegio Montano Cortijo &copy; 2027 | <i>Sistema de Gestión Pedagógica e Interactiva</i></p>
+    </footer>
+
+    <!-- SCRIPT DE INTERACTIVIDAD -->
+    <script>
+        function switchTab(event, tabId) {
+            // Ocultar todas las pestañas
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remover clase activa de todos los botones
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Mostrar la pestaña seleccionada y activar botón
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    alert(`Error al intentar habilitar pantalla completa: ${err.message} (${err.name})`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
